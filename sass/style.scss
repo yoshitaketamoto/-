@@ -142,7 +142,7 @@ section-btn
       top: 50%;
       transform: translateY(-50%);
       right: 22px;
-      background: url(../img/btn_arrow_white_right_2019.svg) center center / contain no-repeat;
+      background: url(../img/section-img/btn_arrow_white_right_2019.svg) center center / contain no-repeat;
       width: 14px;
       height: 16px;
       @include mq(tab) {
@@ -503,7 +503,7 @@ header
       top: 50%;
       transform: translateY(-50%);
       left: 0;
-      background: url(../img/back_icon.svg) center center / contain no-repeat;
+      background: url(../img/header-img/back_icon.svg) center center / contain no-repeat;
       width: 16px;
       height: 16px;
       @include mq(tab) {
@@ -679,7 +679,7 @@ section共通
 }
 
 .section-head {
-  background-image: url(../img/bg_title001@2x.png);
+  background-image: url(../img/easy-img/bg_title001@2x.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -1038,7 +1038,7 @@ fast
     right: -82px;
     width: 313px;
     height: 326px;
-    background: url(../img/title002_bg@2x.png) center center / cover no-repeat;
+    background: url(../img/fast-img/title002_bg@2x.png) center center / cover no-repeat;
     @include mq(tab) {
       width: 200px;
       height: 210px;
@@ -1164,7 +1164,7 @@ fast
 }
 
 .fast-head {
-  background-image: url(../img/bg_title002@2x.png);
+  background-image: url(../img/fast-img/bg_title002@2x.png);
 }
 
 .fast-inner {
@@ -1311,7 +1311,7 @@ safe
     position: absolute;
     right: 22px;
     top: -202px;
-    background: url(../img/title003_bg@2x.png) center center / cover no-repeat;
+    background: url(../img/safe-img/title003_bg@2x.png) center center / cover no-repeat;
     width: 220px;
     height: 218px;
     @include mq(tab) {
@@ -1467,7 +1467,7 @@ kind-point-title
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      background: url(../img/kind_title_icon01.png) center center / contain no-repeat;
+      background: url(../img/safe-img/kind_title_icon01.png) center center / contain no-repeat;
       width: 33px;
       height: 33px;
       @include mq(tab) {
@@ -1517,7 +1517,7 @@ util-title
 }
 
 .top-cheap-example-title {
-  background-image: url(../img/price_case_bg.png);
+  background-image: url(../img/safe-img/price_case_bg.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1632,7 +1632,7 @@ util-title
         top: 50%;
         transform: translateY(-50%);
         left: 14px;
-        background: url(../img/price_case_icon02@2x.png) center center / contain no-repeat;
+        background: url(../img/safe-img/price_case_icon02@2x.png) center center / contain no-repeat;
         width: 42px;
         height: 30px;
       }
@@ -1651,7 +1651,7 @@ util-title
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-    background: url(../img/price_case_icon01@2x.png) center center / contain no-repeat;
+    background: url(../img/safe-img/price_case_icon01@2x.png) center center / contain no-repeat;
     width: 60px;
     height: 40px;
   }
@@ -1810,7 +1810,7 @@ kind-2point
 .kind-2point-title {
   span {
     &::before {
-      background: url(../img/kind_title_icon02.png) center center / contain no-repeat;
+      background: url(../img/safe-img/kind_title_icon02.png) center center / contain no-repeat;
     }
   }
 }
@@ -1915,7 +1915,7 @@ kind-3point
 .kind-3point-title {
   span {
     &::before {
-      background: url(../img/kind_title_icon03.png) center center / contain no-repeat;
+      background: url(../img/safe-img/kind_title_icon03.png) center center / contain no-repeat;
     }
   }
 }
@@ -2145,7 +2145,7 @@ welcome
     position: absolute;
     bottom: 0;
     left: 0;
-    background: url(../img/welcome_text_bg01@2x.png) center center / contain no-repeat;
+    background: url(../img/welcome-img/welcome_text_bg01@2x.png) center center / contain no-repeat;
     width: 25px;
     height: 23px;
     @include mq(tab) {
@@ -2159,7 +2159,7 @@ welcome
     position: absolute;
     bottom: 0;
     right: 0;
-    background: url(../img/welcome_text_bg02@2x.png) center center / contain no-repeat;
+    background: url(../img/welcome-img/welcome_text_bg02@2x.png) center center / contain no-repeat;
     width: 25px;
     height: 23px;
     @include mq(tab) {
@@ -2188,7 +2188,7 @@ welcome
     &::before {
       position: absolute;
       content: "";
-      background: url(../img/btn_icon@2x.png) center center / contain no-repeat;
+      background: url(../img/welcome-img/btn_icon@2x.png) center center / contain no-repeat;
       top: -104px;
       left: 50%;
       transform: translateX(-50%);
@@ -2313,7 +2313,7 @@ footer
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-    background: url(../img/icon_footer_nav.svg) center center / contain no-repeat;
+    background: url(../img/footer-img/icon_footer_nav.svg) center center / contain no-repeat;
     width: 9px;
     height: 11px;
     @include mq(tab) {
@@ -2432,7 +2432,7 @@ footer
     }
     &::before {
       position: absolute;
-      background: #FFFFFF url(../img/icon_page_top.svg) center center no-repeat;
+      background: #FFFFFF url(../img/footer-img/icon_page_top.svg) center center no-repeat;
     background-size: 20px 20px;
     border-radius: 100%;
     content: "";
@@ -2462,7 +2462,7 @@ footer
     &::after {
       position: absolute;
       content: "";
-      background: url(../img/footer_sns_twitter.svg) center center / contain no-repeat;
+      background: url(../img/footer-img/footer_sns_twitter.svg) center center / contain no-repeat;
       top: 50%;
       transform: translateY(-50%);
       left: 12px;
@@ -2488,7 +2488,7 @@ footer
     &::after {
       position: absolute;
       content: "";
-      background: url(../img/footer_sns_instagram.svg) center center / contain no-repeat;
+      background: url(../img/footer-img/footer_sns_instagram.svg) center center / contain no-repeat;
       top: 50%;
       transform: translateY(-50%);
       left: 12px;
@@ -2513,7 +2513,7 @@ footer
     &::after {
       position: absolute;
       content: "";
-      background: url(../img/footer_sns_facebook.svg) center center / contain no-repeat;
+      background: url(../img/footer-img/footer_sns_facebook.svg) center center / contain no-repeat;
       top: 50%;
       transform: translateY(-50%);
       left: 16px;
@@ -2573,7 +2573,7 @@ footer
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-    background: url(../img/icon_footer_nav.svg) center center / contain no-repeat;
+    background: url(../img/footer-img/icon_footer_nav.svg) center center / contain no-repeat;
     width: 9px;
     height: 11px;
   }
