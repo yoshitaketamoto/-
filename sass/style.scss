@@ -20,7 +20,6 @@ body {
   font-weight: 500;
   line-height: 1.6;
   color: $color-main;
-  
 }
 
 .inner {
@@ -30,14 +29,11 @@ body {
   @include mq(tab) {
     max-width: 600px;
   }
-  // @include mq(tab) {
-  //   padding: 0 10px;
-  // }
+  
   @include mq(sp) {
     max-width: 360px;
     padding: 0 5px;
   }
-
 }
 img {
   width: 100%;
@@ -66,6 +62,17 @@ header-btn
     border-radius: 5px;
     font-weight: bold;
     font-size: 14px;
+    box-shadow: 0 4px 2px #69831c;
+    transform: translateY(-4px);
+    transition: all 0.2s;
+    @include mq(sp) {
+      box-shadow: 0 2px 1px #69831c;
+      transform: translateY(-2px);
+    }
+    &:hover {
+      box-shadow: 0 1px 0 #69831c;
+      transform: translateY(-1px);
+    }
     img {
       width: 20px;
       vertical-align: middle;
@@ -76,7 +83,6 @@ header-btn
       @include mq(sp) {
         width: 8px;
         margin-right: 3px;
-        
       }
     }
     @include mq(tab) {
@@ -89,9 +95,6 @@ header-btn
       line-height: 12px;
       font-size: 10px;
       border-radius: 2px;
-      // transform: scale(0.6);
-      // transform-origin: 0 0;
-      // display: block;
     }
   }
 }
@@ -108,6 +111,7 @@ section-btn
   @include mq(sp) {
     width: 150px;
     margin-top: 10px;
+    transform: scale(0.6);
   }
   a {
     font-size: 18px;
@@ -121,6 +125,13 @@ section-btn
     line-height: 57px;
     border-radius: 5px;
     position: relative;
+    box-shadow: 0 4px 2px #69831c;
+    transform: translateY(-4px);
+    transition: all 0.2s;
+    &:hover {
+      box-shadow: 0 1px 0 #69831c;
+      transform: translateY(-1px);
+    }
     @include mq(tab) {
       height: 30px;
       line-height: 30px;
@@ -132,9 +143,6 @@ section-btn
       line-height: 25px;
       border-radius: 3px;
       font-size: 10px;
-      transform: scale(0.6);
-      transform-origin: 0 0;
-      display: block;
     }
     &::after {
       content: "";
@@ -162,12 +170,6 @@ section-btn
 /**********************
 header
 ***********************/
-.header {
-}
-
-.header-inner {
-}
-
 .header-sale {
   background: #ebe1cd;
   height: 47px;
@@ -196,6 +198,10 @@ header
   display: flex;
   justify-content: end;
   align-items: center;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
   @include mq(tab) {
     height: 30px;
   }
@@ -266,7 +272,7 @@ header
     line-height: 20px;
     font-size: 10px;
     padding: 0 5px;
-    transform:scale(0.5);
+    transform: scale(0.5);
     display: block;
     transform-origin: 0 8px;
     margin-left: 7px;
@@ -306,12 +312,14 @@ header
   }
 }
 
-.header-about-left {
-}
-
 .header-logo {
   width: 154px;
   display: inline-block;
+  transition: all 0.3s;
+  vertical-align: middle;
+  &:hover {
+    opacity: 0.7;
+  }
   @include mq(tab) {
     width: 80px;
   }
@@ -325,6 +333,10 @@ header
   display: inline-block;
   margin-left: 20px;
   vertical-align: middle;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
   @include mq(tab) {
     width: 60px;
     margin-left: 12px;
@@ -339,6 +351,11 @@ header
   width: 250px;
   display: inline-block;
   margin-left: 18px;
+  transition: all 0.3s;
+  vertical-align: middle;
+  &:hover {
+    opacity: 0.7;
+  }
   @include mq(tab) {
     width: 150px;
     margin-left: 10px;
@@ -351,9 +368,6 @@ header
 
 .header-about-right {
   display: flex;
-}
-
-.header-about-btn-like {
 }
 
 .header-about-btn-login {
@@ -370,7 +384,6 @@ header
   width: 100%;
   height: 55px;
   background: #da5341;
-  // position: fixed;
   z-index: 10;
   color: #fff;
   font-weight: bold;
@@ -387,17 +400,14 @@ header
   height: inherit;
 }
 
-.header-link-lists {
-  display: flex;
-  width: 100%;
-  position: relative;
-  height: 55px;
-  @include mq(tab) {
-    height: 38px;
-  }
-  @include mq(sp) {
-    height: 18px;
-  }
+.header-scroll {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+.header-link-lists- {
   &::before {
     content: "";
     position: absolute;
@@ -414,6 +424,37 @@ header
       height: 14px;
     }
   }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 42px;
+    width: 1px;
+    background: #fff;
+    @include mq(tab) {
+      height: 28px;
+    }
+    @include mq(sp) {
+      height: 14px;
+    }
+  }
+}
+.header-link-lists {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 55px;
+  background: #da5341;
+  @include mq(tab) {
+    height: 38px;
+  }
+  @include mq(sp) {
+    height: 18px;
+  }
+  
+  
   a {
     font-size: 1.125rem;
     display: inline-block;
@@ -422,16 +463,19 @@ header
     position: relative;
     width: 20%;
     text-align: center;
+    transition: all 0.3s;
+    &:hover {
+      background: #b25a50;
+    }
     @include mq(tab) {
       height: 38px;
       line-height: 38px;
-      font-size: 12px; 
+      font-size: 12px;
     }
     @include mq(sp) {
       height: 18px;
       line-height: 18px;
       font-size: 10px;
-      
     }
     img {
       width: 25px;
@@ -446,20 +490,23 @@ header
         margin-right: 2px;
       }
     }
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 42px;
-      width: 1px;
-      background: #fff;
-      @include mq(tab) {
-        height: 28px;
-      }
-      @include mq(sp) {
-        height: 14px;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 42px;
+        width: 1px;
+        background: #fff;
+        @include mq(tab) {
+          height: 28px;
+        }
+        @include mq(sp) {
+          height: 14px;
+        }
       }
     }
   }
@@ -480,13 +527,17 @@ header
   @include mq(sp) {
     padding: 0;
   }
-  
+
   a {
     display: inline-block;
     color: #c5c7c8;
     margin-left: 22px;
     padding-left: 18px;
     position: relative;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
     @include mq(tab) {
       font-size: 12px;
       margin-left: 15px;
@@ -545,9 +596,6 @@ about
   }
 }
 
-.about-inner {
-}
-
 .about-img {
   position: absolute;
   top: 0;
@@ -556,7 +604,6 @@ about
     left: -90%;
   }
   @include mq(sp) {
-
   }
   img {
     width: 520px;
@@ -625,6 +672,10 @@ about
       @include mq(sp) {
         margin-left: 5px;
       }
+    }
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.7;
     }
   }
   img {
@@ -719,10 +770,6 @@ section共通ここまで
   }
 }
 
-.easy-inner {
-
-}
-
 .easy-items {
   display: flex;
   margin-top: 42px;
@@ -760,7 +807,6 @@ section共通ここまで
 .easy-item-title {
   width: 132px;
   margin: 0 auto;
-  // padding: 0 5px;
   @include mq(tab) {
     width: 80px;
   }
@@ -784,7 +830,7 @@ section共通ここまで
     font-size: 10px;
     margin-top: 3px;
     padding: 0 0;
-    transform: scale(0.6);  
+    transform: scale(0.6);
     transform-origin: 50px 0;
     display: block;
   }
@@ -793,11 +839,11 @@ section共通ここまで
 .easy-item-img {
   margin-top: 18px;
   @include mq(tab) {
-    margin-top: 12px; 
+    margin-top: 12px;
   }
-@include mq(sp) {
-  margin-top: 3px;
-}
+  @include mq(sp) {
+    margin-top: 3px;
+  }
 }
 
 .easy-item-text {
@@ -997,7 +1043,6 @@ section共通ここまで
   @include mq(sp) {
     margin: 0 5px 0 5px;
     height: 10px;
-
   }
   img {
     background: #df7163;
@@ -1054,9 +1099,6 @@ fast
   }
 }
 
-.fast-point-img {
-}
-
 .fast-title-img {
   width: 320px;
   margin: 0 auto;
@@ -1092,12 +1134,12 @@ fast
 
 .fast-title-head-bold {
   font-size: 30px;
-    @include mq(tab) {
-      font-size: 22px;
-    }
-    @include mq(sp) {
-      font-size: 14px;
-    }
+  @include mq(tab) {
+    font-size: 22px;
+  }
+  @include mq(sp) {
+    font-size: 14px;
+  }
 }
 
 .fast-point-red {
@@ -1151,7 +1193,6 @@ fast
     @include mq(sp) {
       width: 5px;
       height: 5px;
-
     }
   }
 }
@@ -1161,13 +1202,13 @@ fast
   @include mq(tab) {
     margin-top: 15px;
   }
+  @include mq(sp) {
+    margin-top: 5px;
+  }
 }
 
 .fast-head {
   background-image: url(../img/fast-img/bg_title002@2x.png);
-}
-
-.fast-inner {
 }
 
 .fast-point-wrap {
@@ -1187,13 +1228,10 @@ fast
   }
 }
 
-.fast-point-img {
-}
-
 .fast-point-text {
   margin-left: 32px;
   @include mq(tab) {
-    margin-left: 16px;  
+    margin-left: 16px;
     font-size: 10px;
   }
   @include mq(sp) {
@@ -1224,9 +1262,6 @@ safe
   @include mq(sp) {
     padding-bottom: 4px;
   }
-}
-
-.safe-point-img {
 }
 
 .safe-title-img {
@@ -1274,18 +1309,13 @@ safe
   font-size: 27px;
   font-weight: bold;
   @include mq(tab) {
-    font-size: 15px;  
+    font-size: 15px;
   }
   @include mq(sp) {
     font-size: 12px;
   }
   span {
     color: #e95363;
-  }
-}
-
-.safe-title-head {
-  span {
   }
 }
 
@@ -1332,14 +1362,6 @@ safe
   }
 }
 
-.safe-title-item {
-  img {
-  }
-}
-
-.safe-inner {
-}
-
 .kind-3points-items {
   display: flex;
   margin-top: 80px;
@@ -1382,7 +1404,7 @@ safe
     display: inline-block;
     width: calc(33.3% - 18px * 2 / 3);
     @include mq(tab) {
-      width: calc(33.3% - 10px * 2 /3);
+      width: calc(33.3% - 10px * 2 / 3);
     }
     @include mq(sp) {
       width: calc(33.3% - 5px * 2 / 3);
@@ -1393,7 +1415,7 @@ safe
     &:not(:first-child) {
       margin-left: 18px;
       @include mq(tab) {
-      margin-left: 10px;
+        margin-left: 10px;
       }
       @include mq(sp) {
         margin-left: 5px;
@@ -1476,7 +1498,7 @@ kind-point-title
       }
       @include mq(sp) {
         width: 10px;
-        height: 10px; 
+        height: 10px;
       }
     }
   }
@@ -1493,17 +1515,24 @@ util-title
     font-size: 15px;
     margin-top: 16px;
   }
+  @include mq(sp) {
+    font-size: 12px;
+    margin-top: 3px;
+  }
   span {
-    color: #E95363;
+    color: #e95363;
   }
 }
-
 
 .top-cheap-text {
   margin-top: 14px;
   @include mq(tab) {
     font-size: 12px;
     margin-top: 5px;
+  }
+  @include mq(sp) {
+    font-size: 14px;
+    margin-top: 2px;
   }
   span {
     font-weight: bold;
@@ -1512,8 +1541,14 @@ util-title
 
 .top-cheap-example {
   margin-top: 30px;
-  border: 2px solid #E95363;
+  border: 2px solid #e95363;
   background: #fff;
+  @include mq(tab) {
+    margin-top: 15px;
+  }
+  @include mq(sp) {
+    margin-top: 10px;
+  }
 }
 
 .top-cheap-example-title {
@@ -1532,6 +1567,11 @@ util-title
     line-height: 30px;
     font-size: 12px;
   }
+  @include mq(sp) {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+  }
 }
 
 .top-cheap-example-wrap {
@@ -1543,12 +1583,15 @@ util-title
     padding: 0 10px 12px 10px;
     margin-top: 10px;
   }
+  @include mq(sp) {
+    padding: 0 5px 6px 5px;
+    margin-top: 5px;
+  }
 }
 
 .top-cheap-example-left {
   width: 65.957%;
   dl {
-
     dt {
       width: 250px;
       background: #888888;
@@ -1563,6 +1606,13 @@ util-title
         height: 32px;
         line-height: 32px;
         font-size: 10px;
+      }
+      @include mq(sp) {
+        width: 80px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 10px;
+        border-radius: 2px 0 0 2px;
       }
       span {
         position: relative;
@@ -1579,39 +1629,93 @@ util-title
             font-size: 10px;
             width: 150px;
           }
+          @include mq(sp) {
+            font-size: 10px;
+            transform: scale(0.6);
+            transform-origin: -146px -54px;
+            display: block;
+          }
         }
       }
     }
   }
   dd {
     width: calc(100% - 250px);
-    background: #EEEEEE;
+    background: #eeeeee;
     font-size: 31px;
     height: 65px;
     line-height: 65px;
-    color: #E95363;
+    color: #e95363;
     font-weight: bold;
     border-radius: 0 4px 4px 0;
     text-align: center;
+    position: relative;
+    @include mq(sp) {
+      font-size: 14px;
+      height: 25px;
+      line-height: 25px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -36px;
+      left: 24px;
+      background: url(../img/safe-img/plus_icon@2x.png) center center / contain no-repeat;
+      width: 26px;
+      height: 26px;
+      @include mq(tab) {
+        bottom: -22px;
+        left: 10px;
+        width: 14px;
+        height: 14px;
+      }
+      @include mq(sp) {
+        bottom: -14px;
+        left: 7px;
+        width: 10px;
+        height: 10px;
+      }
+    }
     @include mq(tab) {
       width: calc(100% - 150px);
       height: 32px;
       line-height: 32px;
+      font-size: 20px;
+    }
+    @include mq(sp) {
+      width: calc(100% - 80px);
+      height: 25px;
+      line-height: 25px;
     }
     span {
       font-size: 18px;
+      @include mq(tab) {
+        font-size: 10px;
+      }
+      @include mq(sp) {
+        font-size: 10px;
+      }
     }
     .span-before {
       content: "30";
       vertical-align: middle;
       font-size: 16px;
       color: #fff;
-      background: #7D7D7D;
+      background: #7d7d7d;
       width: 56px;
-      height: 25px;
       border-radius: 12px;
       padding: 6px 9px;
       margin-right: 3px;
+      @include mq(tab) {
+        font-size: 10px;
+        width: 30px;
+        padding: 3px 6px;
+      }
+      @include mq(sp) {
+        font-size: 10px;
+        width: 20px;
+        padding: 1px 3px;
+      }
     }
   }
   p {
@@ -1619,13 +1723,35 @@ util-title
     border-radius: 4px;
     font-size: 19px;
     font-weight: bold;
-    background: #EEEEEE;
+    background: #eeeeee;
     text-align: center;
+    height: 65px;
+    line-height: 65px;
+    @include mq(tab) {
+      font-size: 12px;
+      margin-top: 30px;
+      height: 32px;
+      line-height: 32px;
+    }
+    @include mq(sp) {
+      font-size: 10px;
+      margin-top: 18px;
+      height: 25px;
+      line-height: 25px;
+    }
     span {
       font-size: 27px;
       color: #e95363;
       position: relative;
       padding-left: 62px;
+      @include mq(tab) {
+        font-size: 15px;
+        padding-left: 25px;
+      }
+      @include mq(sp) {
+        font-size: 12px;
+        padding-left: 20px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -1635,6 +1761,16 @@ util-title
         background: url(../img/safe-img/price_case_icon02@2x.png) center center / contain no-repeat;
         width: 42px;
         height: 30px;
+        @include mq(tab) {
+          width: 25px;
+          height: 15px;
+          left: 0;
+        }
+        @include mq(sp) {
+          width: 15px;
+          height: 10px;
+          left: 0;
+        }
       }
     }
   }
@@ -1645,6 +1781,14 @@ util-title
   font-size: 18px;
   position: relative;
   padding-left: 70px;
+  @include mq(tab) {
+    font-size: 10px;
+    padding-left: 35px;
+  }
+  @include mq(sp) {
+    font-size: 10px;
+    padding-left: 25px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -1654,6 +1798,14 @@ util-title
     background: url(../img/safe-img/price_case_icon01@2x.png) center center / contain no-repeat;
     width: 60px;
     height: 40px;
+    @include mq(tab) {
+      width: 40px;
+      height: 20px;
+    }
+    @include mq(sp) {
+      width: 25px;
+      height: 15px;
+    }
   }
   &::after {
     position: absolute;
@@ -1661,6 +1813,15 @@ util-title
     bottom: -41px;
     left: 56px;
     width: 250px;
+    @include mq(tab) {
+      bottom: -20px;
+      left: -28px;
+    }
+    @include mq(sp) {
+      transform: scale(0.6);
+      left: -63px;
+      bottom: -16px;
+    }
   }
 }
 
@@ -1669,48 +1830,87 @@ util-title
   &:not(:first-child) {
     margin-top: 45px;
     @include mq(tab) {
-      margin-top: 20px;
+      margin-top: 30px;
+    }
+    @include mq(sp) {
+      margin-top: 18px;
     }
   }
 }
 
 .top-cheap-example-right {
   width: 31.915%;
-  background: #E95363;
+  background: #e95363;
   text-align: center;
   padding: 75px 10px;
-  p { 
+  @include mq(tab) {
+    padding: 38px 10px;
+  }
+  @include mq(sp) {
+    padding: 23px 5px;
+  }
+  p {
     font-size: 49px;
     color: #fff;
     font-weight: bold;
-    
+    @include mq(tab) {
+      font-size: 30px;
+    }
+    @include mq(sp) {
+      font-size: 20px;
+    }
   }
   .span-total {
     font-size: 18px;
-    color: #E95363;
+    color: #e95363;
     font-weight: bold;
     background: #fff;
     width: 158px;
     border-radius: 14px;
     display: block;
     margin: 0 auto;
+    @include mq(tab) {
+      font-size: 14px;
+      width: 100px;
+    }
+    @include mq(sp) {
+      font-size: 10px;
+      width: 60px;
+    }
   }
   .span-yen {
     font-size: 24px;
+    @include mq(tab) {
+      font-size: 14px;
+    }
+    @include mq(sp) {
+      font-size: 12px;
+    }
   }
   img {
     width: 194px;
+    @include mq(tab) {
+      width: 100px;
+    }
+    @include mq(sp) {
+      width: 65px;
+    }
   }
 }
 
 .payments {
   margin-top: 31px;
   display: flex;
-  border-bottom: 2px solid #E0E0E0;
+  border-bottom: 2px solid #e0e0e0;
   padding-bottom: 28px;
   @include mq(tab) {
     margin-top: 20px;
     padding-bottom: 20px;
+  }
+  @include mq(sp) {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
   }
 }
 
@@ -1719,11 +1919,17 @@ util-title
   @include mq(tab) {
     width: calc(50% - 15px / 2);
   }
-  
+  @include mq(sp) {
+    width: calc(50% - 5px / 2);
+  }
+
   &:not(:first-child) {
     margin-left: 30px;
     @include mq(tab) {
       margin-left: 15px;
+    }
+    @include mq(sp) {
+      margin-left: 5px;
     }
   }
 }
@@ -1733,10 +1939,14 @@ util-title
 }
 
 .payments-text {
-  margin-top: 18px; 
+  margin-top: 18px;
   @include mq(tab) {
     font-size: 10px;
     margin-top: 6px;
+  }
+  @include mq(sp) {
+    font-size: 10px;
+    margin-top: 3px;
   }
   span {
     font-weight: bold;
@@ -1768,6 +1978,9 @@ util-title
   @include mq(tab) {
     margin-top: 16px;
   }
+  @include mq(sp) {
+    margin-top: 10px;
+  }
 }
 
 .free-delivery-item {
@@ -1775,10 +1988,16 @@ util-title
   @include mq(tab) {
     width: calc(50% - 15px / 2);
   }
+  @include mq(sp) {
+    width: calc(50% - 5px / 2);
+  }
   &:not(:first-child) {
     margin-left: 30px;
     @include mq(tab) {
       margin-left: 15px;
+    }
+    @include mq(sp) {
+      margin-left: 5px;
     }
   }
 }
@@ -1788,9 +2007,13 @@ util-title
 }
 
 .free-delivery-text {
-  margin-top: 18px; 
+  margin-top: 18px;
   @include mq(tab) {
     margin-top: 6px;
+    font-size: 10px;
+  }
+  @include mq(sp) {
+    margin-top: 3px;
     font-size: 10px;
   }
   span {
@@ -1804,6 +2027,9 @@ kind-2point
   padding-bottom: 136px;
   @include mq(tab) {
     padding-bottom: 80px;
+  }
+  @include mq(sp) {
+    padding-bottom: 40px;
   }
 }
 
@@ -1821,6 +2047,9 @@ kind-2point
   @include mq(tab) {
     margin-top: 12px;
   }
+  @include mq(sp) {
+    margin-top: 6px;
+  }
 }
 
 .support-item {
@@ -1828,10 +2057,16 @@ kind-2point
   @include mq(tab) {
     width: calc(50% - 40px / 2);
   }
+  @include mq(sp) {
+    width: calc(50% - 20px / 2);
+  }
   &:not(:first-child) {
     margin-left: 80px;
     @include mq(tab) {
       margin-left: 40px;
+    }
+    @include mq(sp) {
+      margin-left: 20px;
     }
   }
   img {
@@ -1839,22 +2074,31 @@ kind-2point
     @include mq(tab) {
       margin-top: 6px;
     }
+    @include mq(sp) {
+      margin-top: 3px;
+    }
   }
   p {
     margin-top: 18px;
     @include mq(tab) {
       margin-top: 6px;
     }
+    @include mq(sp) {
+      margin-top: 3px;
+    }
   }
 }
 
 .support-title {
   font-size: 27px;
-  color: #E95363;
+  color: #e95363;
   font-weight: bold;
   text-align: center;
   @include mq(tab) {
     font-size: 14px;
+  }
+  @include mq(sp) {
+    font-size: 12px;
   }
 }
 
@@ -1864,6 +2108,10 @@ kind-2point
     font-size: 10px;
     padding-bottom: 68px;
   }
+  @include mq(sp) {
+    font-size: 10px;
+    padding-bottom: 79px;
+  }
 }
 
 .support-right-text {
@@ -1872,18 +2120,29 @@ kind-2point
     font-size: 10px;
     padding-bottom: 20px;
   }
+  @include mq(sp) {
+    font-size: 10px;
+    padding-bottom: 0;
+  }
   strong {
     font-weight: bold;
   }
   span {
-    font-size: 12px;  
+    font-size: 12px;
     padding-left: 14px;
     display: inline-block;
     position: relative;
     @include mq(tab) {
       font-size: 10px;
       transform: scale(0.8);
-      transform-origin:0 0 ;
+      transform-origin: 0 0;
+      display: inline-block;
+      padding-left: 8px;
+    }
+    @include mq(sp) {
+      font-size: 10px;
+      transform: scale(0.6);
+      transform-origin: 0 0;
       display: inline-block;
       padding-left: 8px;
     }
@@ -1897,6 +2156,10 @@ kind-2point
         font-size: 10px;
         transform: scale(0.8);
       }
+      @include mq(sp) {
+        font-size: 10px;
+        transform: scale(0.6);
+      }
     }
   }
 }
@@ -1908,10 +2171,6 @@ kind-2point
 /************************
 kind-3point
 ************************/
-.kind-3point {
-  
-}
-
 .kind-3point-title {
   span {
     &::before {
@@ -1926,29 +2185,42 @@ kind-3point
   padding-bottom: 30px;
   border-bottom: 1px solid #e0e0e0;
   @include mq(tab) {
-    margin-top: 14px; 
+    margin-top: 14px;
     padding-bottom: 15px;
+  }
+  @include mq(sp) {
+    margin-top: 10px;
+    padding-bottom: 6px;
   }
 }
 
 .kind-3point-item {
-    width: calc(33.3% - 28px * 2 / 3);
+  width: calc(33.3% - 28px * 2 / 3);
+  @include mq(tab) {
+    width: calc(33.3% - 14px * 2 / 3);
+  }
+  @include mq(sp) {
+    width: calc(33.3% - 7px * 2 / 3);
+  }
+  &:not(:first-child) {
+    margin-left: 28px;
     @include mq(tab) {
-      width: calc(33.3% - 14px * 2 / 3);
+      margin-left: 14px;
     }
-    &:not(:first-child) {
-      margin-left: 28px;  
-      @include mq(tab) {
-        margin-left: 14px;
-      }
+    @include mq(sp) {
+      margin-left: 7px;
     }
-    text-align: center;
+  }
+  text-align: center;
 }
 
 .kind-3point-item-img1 {
   width: 224px;
   @include mq(tab) {
     width: 140px;
+  }
+  @include mq(sp) {
+    width: 70px;
   }
 }
 
@@ -1957,12 +2229,18 @@ kind-3point
   @include mq(tab) {
     width: 180px;
   }
+  @include mq(sp) {
+    width: 90px;
+  }
 }
 
 .kind-3point-item-img3 {
   width: 174px;
   @include mq(tab) {
     width: 100px;
+  }
+  @include mq(sp) {
+    width: 50px;
   }
 }
 
@@ -1973,8 +2251,11 @@ kind-3point
   @include mq(tab) {
     font-size: 14px;
   }
+  @include mq(sp) {
+    font-size: 12px;
+  }
   span {
-    color: #E95363;
+    color: #e95363;
   }
 }
 
@@ -1984,6 +2265,10 @@ kind-3point
   @include mq(tab) {
     margin-top: 10px;
     font-size: 10px;
+  }
+  @include mq(sp) {
+    font-size: 10px;
+    margin-top: 5px;
   }
   span {
     font-weight: bold;
@@ -1995,12 +2280,18 @@ kind-3point
   @include mq(tab) {
     padding-bottom: 16px;
   }
+  @include mq(sp) {
+    padding-bottom: 32px;
+  }
 }
 
 .kind-3point-item-text3 {
   padding-bottom: 24px;
   @include mq(tab) {
     padding-bottom: 22px;
+  }
+  @include mq(sp) {
+    padding-bottom: 35px;
   }
 }
 
@@ -2009,6 +2300,11 @@ kind-3point
   margin-top: 20px;
   @include mq(tab) {
     margin-top: 10px;
+  }
+  @include mq(sp) {
+    margin-top: 5px;
+    width: 170px;
+    transform-origin: 0 0;
   }
 }
 
@@ -2020,7 +2316,7 @@ kind-3point
   }
 }
 
-.kind-3point-bottom { 
+.kind-3point-bottom {
   max-width: 646px;
   width: 100%;
   margin: 0 auto;
@@ -2028,6 +2324,10 @@ kind-3point
   @include mq(tab) {
     max-width: 400px;
     margin-top: 15px;
+  }
+  @include mq(sp) {
+    max-width: 250px;
+    margin-top: 7px;
   }
 }
 
@@ -2037,8 +2337,11 @@ kind-3point
   @include mq(tab) {
     font-size: 14px;
   }
+  @include mq(sp) {
+    font-size: 12px;
+  }
   span {
-    color: #E95363;
+    color: #e95363;
   }
 }
 
@@ -2048,12 +2351,21 @@ kind-3point
   @include mq(tab) {
     margin-top: 16px;
   }
+  @include mq(sp) {
+    margin-top: 8px;
+  }
 }
 
 .kind-3point-bottom-item {
   width: calc(50% - 15px / 2);
+  @include mq(sp) {
+    width: calc(50% - 7px / 2);
+  }
   &:not(:first-child) {
     margin-left: 15px;
+    @include mq(sp) {
+      margin-left: 7px;
+    }
   }
   text-align: center;
 }
@@ -2061,6 +2373,9 @@ kind-3point
 .kind-3point-bottom-text {
   text-align: left;
   @include mq(tab) {
+    font-size: 10px;
+  }
+  @include mq(sp) {
     font-size: 10px;
   }
   span {
@@ -2074,13 +2389,18 @@ kind-3point
   @include mq(tab) {
     margin-top: 28px;
   }
+  @include mq(sp) {
+    margin-top: 14px;
+    width: 170px;
+    transform-origin: 0 0;
+  }
 }
 
 .kind-3point-bottom-text-point {
   display: inline-block;
   font-weight: bold;
   font-size: 18px;
-  background: #FBE6E8;
+  background: #fbe6e8;
   padding: 15px;
   border-radius: 12px;
   line-height: 1.4rem;
@@ -2091,12 +2411,21 @@ kind-3point
     line-height: 1.2;
     margin-top: 8px;
   }
+  @include mq(sp) {
+    font-size: 10px;
+    padding: 4px;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
   span {
-    color: #EB5F6E;
+    color: #eb5f6e;
     strong {
       font-size: 27px;
       @include mq(tab) {
         font-size: 18px;
+      }
+      @include mq(sp) {
+        font-size: 14px;
       }
     }
   }
@@ -2106,11 +2435,14 @@ kind-3point
 welcome
 ***************************/
 .welcome {
-  background: #FBFAF4;
+  background: #fbfaf4;
   padding: 45px 0 138px 0;
   border-bottom: 1px solid #e0e0e0;
   @include mq(tab) {
     padding: 23px 0 80px 0;
+  }
+  @include mq(sp) {
+    padding: 20px 0 40px 0;
   }
 }
 
@@ -2123,6 +2455,9 @@ welcome
   width: 517px;
   @include mq(tab) {
     width: 340px;
+  }
+  @include mq(sp) {
+    width: 200px;
   }
 }
 
@@ -2140,6 +2475,12 @@ welcome
     padding-left: 12px;
     padding-right: 12px;
   }
+  @include mq(sp) {
+    margin-top: 10px;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -2152,6 +2493,11 @@ welcome
       width: 12px;
       height: 15px;
       bottom: 3px;
+    }
+    @include mq(sp) {
+      width: 6px;
+      height: 7px;
+      bottom: 10px;
     }
   }
   &::after {
@@ -2167,6 +2513,11 @@ welcome
       height: 15px;
       bottom: 3px;
     }
+    @include mq(sp) {
+      width: 6px;
+      height: 7px;
+      bottom: 10px;
+    }
   }
 }
 
@@ -2176,14 +2527,28 @@ welcome
   @include mq(tab) {
     margin-top: 75px;
   }
+  @include mq(sp) {
+    margin-top: 30px;
+  }
   a {
-    background: #DF7163;
+    background: #df7163;
     height: 74px;
     line-height: 74px;
     position: relative;
+    box-shadow: 0 4px 2px #b35a4f;
+    transform: translateY(-4px);
+    transition: all 0.2s;
+    &:hover {
+      box-shadow: 0 1px 0 #b35a4f;
+      transform: translateY(-1px);
+    }
     @include mq(tab) {
       height: 45px;
       line-height: 45px;
+    }
+    @include mq(sp) {
+      height: 35px;
+      line-height: 35px;
     }
     &::before {
       position: absolute;
@@ -2197,7 +2562,12 @@ welcome
       @include mq(tab) {
         width: 70px;
         height: 70px;
-        top:-65px;
+        top: -65px;
+      }
+      @include mq(sp) {
+        width: 60px;
+        height: 60px;
+        top: -58px;
       }
     }
   }
@@ -2206,7 +2576,7 @@ welcome
 pagination
 ******************************/
 .pagination {
-  background: #FBFAF4;
+  background: #fbfaf4;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -2215,10 +2585,18 @@ pagination
   @include mq(tab) {
     max-width: 560px;
   }
+  @include mq(sp) {
+    max-width: 330px;
+  }
 }
 
 .pagination-lists {
   display: flex;
+  @include mq(sp) {
+    transform: scale(0.6);
+    transform-origin: 0 8px;
+  }
+  
   li {
     padding-right: 20px;
     margin-right: 14px;
@@ -2233,16 +2611,22 @@ pagination
       margin-right: 6px;
       padding-right: 14px;
     }
-      &:not(:last-child) {
-        &::after {
+    @include mq(sp) {
+      height: 14px;
+      line-height: 14px;
+      font-size: 10px;
+      margin-right: 6px;
+      padding-right: 14px;
+    }
+    &:not(:last-child) {
+      &::after {
         content: ">";
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: 0;
-      }  
+      }
     }
-    
   }
   a {
     text-decoration: underline;
@@ -2254,16 +2638,15 @@ pagination
 /*************************
 footer
 *************************/
-.footer {
-
-}
-
 .footer-inner {
   display: flex;
   max-width: 917px;
   justify-content: space-between;
   @include mq(tab) {
     max-width: 560px;
+  }
+  @include mq(sp) {
+    max-width: 330px;
   }
 }
 
@@ -2273,36 +2656,59 @@ footer
   @include mq(tab) {
     padding-top: 0;
   }
+  @include mq(sp) {
+    padding-top: 0;
+  }
 }
 
 .footer-left-link-wrap {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  @include mq(sp) {
+    display: block;
+  }
 }
 
 .footer-logo {
   display: inline-block;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
   img {
     width: 327px;
     @include mq(tab) {
       width: 169px;
-    } 
-  } 
+    }
+    @include mq(sp) {
+      width: 100px;
+    }
+  }
 }
 
 .footer-link {
-  display: inline;
+  display: inline-block;
   font-size: 12px;
   text-decoration: underline;
   position: relative;
   padding-left: 11px;
+  @include mq(sp) {
+    display: block;
+  }
   @include mq(tab) {
     font-size: 10px;
     transform: scale(0.8);
     transform-origin: 0 0;
     display: block;
     padding-left: 6px;
+  }
+  @include mq(sp) {
+    font-size: 10px;
+    transform: scale(0.4);
+    transform-origin: 0 -8px;
+    padding-left: 10px;
+    display: block;
   }
   &:hover {
     text-decoration: none;
@@ -2320,16 +2726,26 @@ footer
       width: 5px;
       height: 7px;
     }
+    @include mq(sp) {
+      width: 5px;
+      height: 7px;
+    }
   }
 }
 
 .footer-left-imgs {
   margin-top: 30px;
-  display: flex;   
+  display: flex;
   padding: 0 14px;
+  @include mq(sp) {
+    margin-top: 6px;
+  }
   img {
     &:not(:first-child) {
       margin-left: 24px;
+      @include mq(sp) {
+        margin-left: 7px;
+      }
     }
   }
 }
@@ -2339,12 +2755,18 @@ footer
   @include mq(tab) {
     width: 50px;
   }
+  @include mq(sp) {
+    width: 25px;
+  }
 }
 
 .footer-left-img2 {
   width: 110px;
   @include mq(tab) {
     width: 55px;
+  }
+  @include mq(sp) {
+    width: 30px;
   }
 }
 
@@ -2353,6 +2775,9 @@ footer
   @include mq(tab) {
     width: 65px;
   }
+  @include mq(sp) {
+    width: 35px;
+  }
 }
 
 .footer-left-img4 {
@@ -2360,14 +2785,21 @@ footer
   @include mq(tab) {
     width: 65px;
   }
+  @include mq(sp) {
+    width: 35px;
+  }
 }
 
 .footer-left-bg {
   width: 453px;
-  margin-left:40px;
+  margin-left: 40px;
   @include mq(tab) {
-    width: 280px; 
-    margin-left: 20px;  
+    width: 280px;
+    margin-left: 20px;
+  }
+  @include mq(sp) {
+    width: 150px;
+    margin-left: 10px;
   }
 }
 
@@ -2385,6 +2817,11 @@ footer
       height: 59px;
       aspect-ratio: 60 / 59;
     }
+    @include mq(sp) {
+      width: 30px;
+      height: 30px;
+      aspect-ratio: 1;
+    }
   }
 }
 
@@ -2393,6 +2830,10 @@ footer
   li {
     &:not(:first-child) {
       margin-top: 4px;
+      @include mq(sp) {
+        margin-top: 0;
+        height: 18px;
+      }
     }
   }
   a {
@@ -2412,6 +2853,16 @@ footer
       font-size: 10px;
       border-radius: 2px;
     }
+    @include mq(sp) {
+      font-size: 10px;
+      height: 15px;
+      line-height: 15px;
+      border-radius: 2px;
+      transform: scale(0.6);
+      width: 120px;
+      transform-origin: 0 0;
+      display: block;
+    }
     &:hover {
       opacity: 0.7;
     }
@@ -2430,24 +2881,34 @@ footer
       line-height: 22px;
       padding-right: 7px;
     }
+    @include mq(sp) {
+      height: 17px;
+      line-height: 17px;
+    }
     &::before {
       position: absolute;
-      background: #FFFFFF url(../img/footer-img/icon_page_top.svg) center center no-repeat;
-    background-size: 20px 20px;
-    border-radius: 100%;
-    content: "";
-    display: block;
-    height: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 12px;
-    width: 20px;
-    @include mq(tab) {
-      width: 10px;
-      height: 10px;
-      left: 5px;
-      background-size: 10px 10px;
-    }
+      background: #ffffff url(../img/footer-img/icon_page_top.svg) center center no-repeat;
+      background-size: 20px 20px;
+      border-radius: 100%;
+      content: "";
+      display: block;
+      height: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 12px;
+      width: 20px;
+      @include mq(tab) {
+        width: 10px;
+        height: 10px;
+        left: 5px;
+        background-size: 10px 10px;
+      }
+      @include mq(sp) {
+        width: 10px;
+        height: 10px;
+        background-size: 10px 10px;
+        left: 3px;
+      }
     }
   }
 }
@@ -2459,6 +2920,9 @@ footer
     @include mq(tab) {
       padding-right: 17px;
     }
+    @include mq(sp) {
+      padding-right: 22px;
+    }
     &::after {
       position: absolute;
       content: "";
@@ -2469,6 +2933,11 @@ footer
       width: 22px;
       height: 18px;
       @include mq(tab) {
+        width: 11px;
+        height: 9px;
+        left: 6px;
+      }
+      @include mq(sp) {
         width: 11px;
         height: 9px;
         left: 6px;
@@ -2485,6 +2954,10 @@ footer
       font-size: 10px;
       padding-right: 10px;
     }
+    @include mq(sp) {
+      font-size: 10px;
+      padding-right: 16px;
+    }
     &::after {
       position: absolute;
       content: "";
@@ -2493,10 +2966,15 @@ footer
       transform: translateY(-50%);
       left: 12px;
       width: 20px;
-      height: 18px;    
+      height: 18px;
       @include mq(tab) {
         width: 10px;
         height: 8px;
+        left: 5px;
+      }
+      @include mq(sp) {
+        width: 10px;
+        justify-items: 8px;
         left: 5px;
       }
     }
@@ -2505,11 +2983,14 @@ footer
 
 .footer-facebook {
   a {
-  position: relative;
-  padding-right: 30px;
-  @include mq(tab) {
-    padding-right: 15px;
-  }
+    position: relative;
+    padding-right: 30px;
+    @include mq(tab) {
+      padding-right: 15px;
+    }
+    @include mq(sp) {
+      padding-right: 24px;
+    }
     &::after {
       position: absolute;
       content: "";
@@ -2522,24 +3003,31 @@ footer
       @include mq(tab) {
         width: 6px;
         height: 10px;
-        left: 8px;  
+        left: 8px;
+      }
+      @include mq(sp) {
+        width: 6px;
+        height: 10px;
+        left: 8px;
       }
     }
   }
 }
 
 .footer-lists-wrap {
-  background: #E0E0E0;
+  background: #e0e0e0;
 }
 
 .footer-bg-point {
-  background: #78A639;
+  background: #78a639;
   height: 9px;
   @include mq(tab) {
     height: 5px;
   }
+  @include mq(sp) {
+    height: 3px;
+  }
 }
-
 
 .footer-lists-inner {
   display: flex;
@@ -2550,10 +3038,18 @@ footer
     max-width: 600px;
     padding: 10px 5px 10px 0;
   }
+  @include mq(sp) {
+    max-width: 330px;
+    padding: 5px 2.5px 5px 0;
+    display: block;
+  }
 }
 
 .footer-lists {
   display: flex;
+  @include mq(sp) {
+    justify-content: space-between;
+  }
 }
 
 .footer-list {
@@ -2564,6 +3060,12 @@ footer
   @include mq(tab) {
     font-size: 10px;
     transform: scale(0.8);
+    transform-origin: 0 0;
+    display: block;
+  }
+  @include mq(sp) {
+    font-size: 10px;
+    transform: scale(0.6);
     transform-origin: 0 0;
     display: block;
   }
@@ -2582,6 +3084,9 @@ footer
     @include mq(tab) {
       margin-left: 14px;
     }
+    @include mq(sp) {
+      margin-left: 7px;
+    }
   }
   a {
     text-decoration: underline;
@@ -2595,28 +3100,14 @@ footer
   font-size: 12px;
   @include mq(tab) {
     font-size: 10px;
-    transform:scale(0.8) ;
+    transform: scale(0.8);
+    transform-origin: 0 0;
+    display: block;
+  }
+  @include mq(sp) {
+    font-size: 10px;
+    transform: scale(0.6);
     transform-origin: 0 0;
     display: block;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
